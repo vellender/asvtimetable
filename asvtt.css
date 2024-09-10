@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders collapse together */
+}
+
+td {
+    width: 11.11%;
+    border: 1px solid black;
+}
+
+th {text-align: left; color: #999;}
+
+.modCode {font-weight: bold; text-align: center; margin:0; font-size:large;}
+.room {font-style: italic; text-align: center; margin:0;}
+.staff {text-align: center;margin:0; font-size:small;}
+.weeks {text-align: center; margin:0; font-size:small;}
+
+.Lecture{background-color: #8484fd9b;}
+.Tutorial{background-color: #84fda09b;}
+.Practical{background-color: #fda4849b;}
+.Seminar{background-color: #fdf9849b;}
+.Workshop{background-color: #fdf9849b;}
+.field.trip{background-color: #fdf9849b;}
+
+#controls {border: 1px solid black; padding:0 5px 0 5px; display:inline-block; border-radius: 10px;}

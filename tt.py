@@ -146,7 +146,7 @@ asv=[]
 b=1
 for a in allActivtiesKeyDetails:
     b+=1
-    asv.append((a[0],a[1],a[2],a[3],a[4],a[5],a[6],summarize_ranges(weeks(a[0],a[1],a[2],a[3])),b))
+    asv.append((a[0].replace("FG","MP"),a[1],a[2],a[3],a[4],a[5],a[6],summarize_ranges(weeks(a[0],a[1],a[2],a[3])),b))
 asv=sorted(asv,key=lambda c:-c[6])
 
 monday=[a for a in asv if 'Monday' in a if a[0][0]!="X"]

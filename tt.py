@@ -165,7 +165,7 @@ def renderCell(ID):
         start="colspan='"+str(a[6])+"'"
     return """
     <td """+start+"""class='"""+a[4]+""" year"""+a[0][2]+"""'>
-        <p class="modCode">"""+a[0]+"""</p>
+        <p class="modCode" title='"""+a[0]+' '+a[4]+"""'>"""+a[0]+"""</p>
         <p class="room">"""+a[3]+"""</p>
         <p class="staff">"""+a[5].replace("<br>"," ")+"""</p>
         <p class="weeks">"""+a[7]+"""</p>

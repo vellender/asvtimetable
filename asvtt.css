@@ -12,3 +12,4 @@ th {text-align: left; color: #999;}
 .Workshop{background-color: #fdf9849b;}
 .field.trip{background-color: #fdf9849b;}
 #controls {border: 1px solid black; padding:0 5px 0 5px; display:inline-block; border-radius: 10px;}
+.timestamp {font-style:italic; text-align: right;}

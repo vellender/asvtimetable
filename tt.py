@@ -190,6 +190,24 @@ def dayMatrix(d):
             p+=1
     return [a for a in M if not allZeros(a)]
 
+def wednesdayMatrix(d):
+    M=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+    for a in d:
+        row=0
+        hours=a[6]
+        startTime=a[1]
+        activityID=a[-1]
+        while allZeros(M[row][lookup[startTime]:lookup[startTime]+hours])==False:
+            row+=1
+        p=0
+        while p<hours:
+            if p==0:
+                M[row][lookup[startTime]+p]=activityID
+            else:
+                M[row][lookup[startTime]+p]=-1
+            p+=1
+    return [a for a in M if not allZeros(a)]
+
 def getActivity(ID):
     return [a for a in asv if a[-1]==ID][0]
 
@@ -204,13 +222,25 @@ def renderDay(d):
                 out+="""<td>&nbsp;</td>"""
         out+="</tr>"
     return out
+
+def renderWednesday(d):
+    out="<tr><th>09:00</th><th>10:00</th><th>11:00</th><th>12:00</th></tr>"
+    for row in wednesdayMatrix(d):
+        out+="<tr>\n"
+        for a in row:
+            if a>0:
+                out+=renderCell(a)
+            if a==0:
+                out+="""<td>&nbsp;</td>"""
+        out+="</tr>"
+    return out
     
 def writeFile(s, f):
     with open(f, 'w') as file:
         file.write(s)
 
 def index():
-    out="""<html><head><title>Timetable</title><link rel="stylesheet" type="text/css" href="asvtt.css" />
+    out="""<html><head><title>Timetable</title><link rel="stylesheet" type="text/css" href="asvtt.css?" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script></head><body><div id="controls"><h2>Controls</h2><p>Isolate yeargroups: <button id="year0">Year 0</button>
 <button id="year1">Year 1</button>
 <button id="year2">Year 2</button>
@@ -222,9 +252,16 @@ def index():
     out+=renderDay(monday)
     out+="</table><h2>Tuesday</h2><table>"
     out+=renderDay(tuesday)
-    out+="</table><h2>Wednesday</h2><table>"
-    out+=renderDay(wednesday)
-    out+="</table><h2>Thursday</h2><table>"
+    out+="</table><h2>Wednesday</h2><table class='tableWed'>"
+    out+=renderWednesday(wednesday)
+    out+="</table>"
+    out+="""<div id='legend'>
+            <h3>Legend</h3>
+            <p><div class='lectureLegend'></div>Lecture</p>
+            <p><div class='tutorialLegend'></div>Tutorial</p>
+            <p><div class='practicalLegend'></div>Practical</p>
+            <p><div class='otherLegend'></div>Other</p></div>"""
+    out+="<br style='clear:both;'><h2>Thursday</h2><table>"
     out+=renderDay(thursday)
     out+="</table><h2>Friday</h2><table>"
     out+=renderDay(friday)

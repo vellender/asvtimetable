@@ -13,3 +13,10 @@ th {text-align: left; color: #999;}
 .field.trip{background-color: #fdf9849b;}
 #controls {border: 1px solid black; padding:0 5px 0 5px; display:inline-block; border-radius: 10px;}
 .timestamp {font-style:italic; text-align: right;}
+.tableWed {width: 44.44%; border-collapse: collapse; float: left;}
+#legend {float: left; margin-left: 22.22%; margin-top: 1.4em; border: 1px solid black; padding-right:3em;}
+h3 {padding:10px;}
+.lectureLegend {width:1em; height:1em; background-color: #8484fd9b; float: left; border: 1px solid black; margin: 0 0.5em 0 1em;}
+.tutorialLegend {width:1em; height:1em; background-color: #84fda09b; float: left; border: 1px solid black; margin: 0 0.5em 0 1em;}
+.practicalLegend {width:1em; height:1em; background-color: #fda4849b; float: left; border: 1px solid black; margin: 0 0.5em 0 1em;}
+.otherLegend {width:1em; height:1em; background-color: #fdf9849b; float: left; border: 1px solid black; margin: 0 0.5em 0 1em;}

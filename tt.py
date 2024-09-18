@@ -265,7 +265,7 @@ def index():
     out+=renderDay(thursday)
     out+="</table><h2>Friday</h2><table>"
     out+=renderDay(friday)
-    out+="""</table><p class="urlFooter">ASV 2024: <span class='url'>https://users.aber.ac.uk/asv2/tt</span></p>"""
+    out+="""</table><p class="urlFooter">ASV 2024: <a href='https://users.aber.ac.uk/asv2/tt/'><span class='url'>https://users.aber.ac.uk/asv2/tt</span></a></p>"""
     out+="""<p class="timestamp">This version: """+datetime.fromtimestamp(os.path.getmtime(csv_file)).strftime("%A %d %B %Y, %H:%M")+"""</p></body>
 <script>
 $('document').ready(()=>{

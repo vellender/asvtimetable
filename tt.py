@@ -240,7 +240,7 @@ def writeFile(s, f):
         file.write(s)
 
 def index():
-    out="""<html><head><title>Timetable</title><link rel="stylesheet" type="text/css" href="asvtt.css?" />
+    out="""<html><head><title>Timetable</title><link rel="stylesheet" type="text/css" href="asvtt_v0_1.css?" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script></head><body><div id="controls"><h2>Controls</h2><p>Isolate yeargroups: <button id="year0">Year 0</button>
 <button id="year1">Year 1</button>
 <button id="year2">Year 2</button>
